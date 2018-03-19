@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-sm-12">
+    <img [src]="recipeReceived.imagePath" alt="" class="img-responsive">
+  </div>
+</div>
+
+  <div class="row mt-1">
+    <div class="col-sm-12">
+      <div class="btn-group">
+        <button class="btn btn-outline-success" (click)="addToIngredients()">Add Ingredient</button>
+        <button class="btn btn-outline-dark" (click)="editRecipe()">Edit Recipe</button>
+        <button class="btn btn-outline-danger" (click)="onDelete()">Delete Recipe</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="display-4">
+        {{ recipeReceived.name }}
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      {{ recipeReceived.description }}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <ul class="list-group">
+        <li class="list-group-item bg-info text-white" *ngFor="let ingredient of recipeReceived.ingredients">
+          {{ ingredient.name }} - {{ ingredient.amount }}
+        </li>
+      </ul>
+    </div>
+  </div>

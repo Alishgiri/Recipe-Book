@@ -1,0 +1,14 @@
+<div class="list-group">
+  <a 
+  [routerLink]="[index]"
+  routerLinkActive="active"
+  class="list-group-item list-group-item-action">
+    <span class="float-left">
+      <img [src]="recipe.imagePath" alt="" width="140" height="100" class="img-responsive">
+    </span>
+    <div class="width float-right">
+      <h4>{{ recipe.name | slice:0:15 }}</h4>
+      <p>{{ recipe.description | slice:0:39 }}...</p>
+    </div>
+  </a>
+</div>

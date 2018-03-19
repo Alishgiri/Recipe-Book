@@ -1,0 +1,22 @@
+<div class="row mb-1">
+    <div class="col-sm-12">
+        <ng-template [ngIf]="authService.isAuthenticated()">
+            <a
+            class="btn btn-outline-dark border float-left btn-sm"
+            (click)="addRecipe()">Add New Recipe</a>
+
+            <span class="btn-group float-right">
+                <a class="btn btn-outline-dark border btn-sm" (click)="onSave()">Save Data</a>
+                <a class="btn btn-outline-dark border btn-sm" (click)="onFetch()">Fetch Data</a>
+            </span>
+        </ng-template>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div *ngFor="let oneRecipe of recipes; let i = index">
+            <app-recipe-item [recipe]="oneRecipe" [index]="i"></app-recipe-item>
+        </div>
+    </div>
+</div>
