@@ -17,13 +17,13 @@ export class RecipesServerService {
 
   storeRecipes() {
     const token =  this.authService.getToken();
-    return this.http.put('https://recipe-book-66e00.firebaseio.com/recipes.json?auth=' + token, this.recipesService.getRecipes());
+    return this.http.put('https://recipe-book-ee2de.firebaseio.com/recipes.json?auth=' + token, this.recipesService.getRecipes());
   }
-
+  //'https://recipe-book-66e00.firebaseio.com/recipes.json?auth=' -> Node1dotmark firebase
   getRecipes() {
     const token =  this.authService.getToken();
 
-    this.http.get('https://recipe-book-66e00.firebaseio.com/recipes.json?auth=' + token)
+    this.http.get('https://recipe-book-ee2de.firebaseio.com/recipes.json?auth=' + token)
       .map(
         (res: Response) => {
           const recipes: Recipe[] = res.json();
